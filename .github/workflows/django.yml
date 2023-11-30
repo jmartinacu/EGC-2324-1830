@@ -8,13 +8,13 @@ jobs:
 
     strategy:
       matrix:
-        postgres: ['postgres:14.9', 'postgres:15']
+        postgre: ['postgres:14.9', 'postgres:15']
 
     runs-on: ubuntu-latest
 
     services:
       postgres:
-        image: ${{matrix.postgres}}
+        image: ${{matrix.postgre}}
         env:
           POSTGRES_USER: decide
           POSTGRES_PASSWORD: decide
