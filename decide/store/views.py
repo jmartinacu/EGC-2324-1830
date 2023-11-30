@@ -20,6 +20,7 @@ class StoreView(generics.ListAPIView):
     def get(self, request):
         self.permission_classes = (UserIsStaff,)
         self.check_permissions(request)
+
         return super().get(request)
 
     def post(self, request):
@@ -27,6 +28,7 @@ class StoreView(generics.ListAPIView):
          * voting: id
          * voter: id
          * vote: { "a": int, "b": int }
+         * questionId
         """
 
         vid = request.data.get('voting')
